@@ -22,6 +22,11 @@ button:hover {
 	cursor:pointer;
 }
 
+a {
+	color:inherit;
+	text-decoration: none;
+}
+
 /******************** Animations **************************************************************************************************************************************/
 
 @-webkit-keyframes menufadew {
@@ -465,6 +470,7 @@ header {
 	width: 22%;
 	min-width: 200px;
 	height: 100%;
+	min-height: 700px;
 	position: absolute;
 	background-image: url(../imgs/largemntnrngeblur.jpg);
 	background-size: cover;
@@ -493,6 +499,31 @@ header {
 	top: 150px;
 	left: 0px;
 	list-style-type: none;*/
+}
+
+#drop1 {
+	display: none;
+}
+#drop1 li {
+	padding: 0;
+	padding-top: 25px;
+	margin: 0;
+	list-style-type: none;
+}
+#hov1:hover #drop1 {
+	display: block;
+}
+#drop2 {
+	display: none;
+}
+#drop2 li {
+	padding: 0;
+	padding-top: 25px;
+	margin: 0;
+	list-style-type: none;
+}
+#hov2:hover #drop2 {
+	display: block;
 }
 
 .menulistshow {
@@ -619,6 +650,7 @@ h3 {
 	min-width: 960px;
 	max-width: 1200px;
 	height: 100%;
+	min-height: 700px;
 }
 
 button {
@@ -680,6 +712,7 @@ button:hover {
 	min-width: 960px;
 	max-width: 1200px;
 	height: 100%;
+	min-height: 700px;
 }
 
 #tours #textwrapper {
@@ -738,6 +771,7 @@ button:hover {
 	min-width: 960px;
 	max-width: 1200px;
 	height: 100%;
+	min-height: 700px;
 }
 
 #fleet #homebookbg {
@@ -799,6 +833,7 @@ button:hover {
 	min-width: 960px;
 	max-width: 1200px;
 	height: 100%;
+	min-height: 700px;
 }
 
 #contact #textwrapper {
