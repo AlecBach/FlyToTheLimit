@@ -1,0 +1,40 @@
+/***  Page specific CSS  ***/
+
+/*.menubg {
+	background-image: url(../imgs/wingovrmntnsblur.jpg);
+}
+.menuhide {
+	background-image: url(../imgs/wingovrmntnsblur.jpg);
+}*/
+.menuhide {
+	display: block;
+	width: 22%;
+	height: 100%;
+	position: absolute;
+	background-image: url(../imgs/wingovrmntnsblur.jpg);
+	background-size: cover;
+	z-index: 499;
+	opacity: 1;
+	-webkit-animation: menufadewr 0.5s ease-in forwards;
+ 	-moz-animation: menufademr 0.5s ease-in forwards;
+ 	-o-animation: menufadeor 0.5s ease-in forwards;
+ 	animation: menufader 0.5s ease-in forwards;
+ 	opacity: 0;
+}
+.menubg {
+	display: block;
+	width: 22%;
+	min-width: 200px;
+	height: 100%;
+	min-height: 700px;
+	position: absolute;
+	background-image: url(../imgs/wingovrmntnsblur.jpg);
+	background-size: cover;
+	z-index: 499;
+	opacity: 0;
+	-webkit-animation: menufadew 0.7s ease-out  alternate;
+ 	-moz-animation: menufadem 0.7s ease-out  alternate;
+ 	-o-animation: menufadeo 0.7s ease-out  alternate;
+ 	animation: menufade 0.7s ease-out  alternate;
+ 	opacity: 1;
+}
