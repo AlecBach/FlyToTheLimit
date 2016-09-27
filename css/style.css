@@ -27,6 +27,10 @@ a {
 	text-decoration: none;
 }
 
+#pageid {
+	display: none;
+}
+
 /******************** Animations **************************************************************************************************************************************/
 
 @-webkit-keyframes menufadew {
@@ -446,42 +450,89 @@ header {
 	box-shadow: 0px 0 5px rgba(255,255,255,1);
 }
 
+#menucontainer {
+	width: 22%;
+	height: 100%;
+	min-width: 200px;
+	min-height: 700px;
+	position: absolute;
+	background-size: cover;
+	box-shadow: 0px 0px 30px rgba(0,0,0,0.5);
+	/* put all values in here except for background, display and opacity. */
+}
 .menuhidden{
 	display: none;
 	z-index: -100;
+	opacity: 0;
 }
-.menuhide {
+.menuhidehome {
 	display: block;
-	width: 22%;
-	height: 100%;
-	position: absolute;
-	background-image: url(../imgs/largemntnrngeblur.jpg);
-	background-size: cover;
 	z-index: 499;
 	opacity: 1;
+	background-image: url(../imgs/largemntnrngeblur.jpg);
 	-webkit-animation: menufadewr 0.5s ease-in forwards;
  	-moz-animation: menufademr 0.5s ease-in forwards;
  	-o-animation: menufadeor 0.5s ease-in forwards;
  	animation: menufader 0.5s ease-in forwards;
  	opacity: 0;
 }
-.menubg {
+.menubghome {
 	display: block;
-	width: 22%;
-	min-width: 200px;
-	height: 100%;
-	min-height: 700px;
-	position: absolute;
-	background-image: url(../imgs/largemntnrngeblur.jpg);
-	background-size: cover;
 	z-index: 499;
 	opacity: 0;
+	background-image: url(../imgs/largemntnrngeblur.jpg);
 	-webkit-animation: menufadew 0.7s ease-out  alternate;
  	-moz-animation: menufadem 0.7s ease-out  alternate;
  	-o-animation: menufadeo 0.7s ease-out  alternate;
  	animation: menufade 0.7s ease-out  alternate;
  	opacity: 1;
 }
+.menuhidetours {
+	display: block;
+	z-index: 499;
+	opacity: 1;
+	background-image: url(../imgs/wingovrmntnsblur.jpg);
+	-webkit-animation: menufadewr 0.5s ease-in forwards;
+ 	-moz-animation: menufademr 0.5s ease-in forwards;
+ 	-o-animation: menufadeor 0.5s ease-in forwards;
+ 	animation: menufader 0.5s ease-in forwards;
+ 	opacity: 0;
+}
+.menubgtours {
+	display: block;
+	z-index: 499;
+	opacity: 0;
+	background-image: url(../imgs/wingovrmntnsblur.jpg);
+	-webkit-animation: menufadew 0.7s ease-out  alternate;
+ 	-moz-animation: menufadem 0.7s ease-out  alternate;
+ 	-o-animation: menufadeo 0.7s ease-out  alternate;
+ 	animation: menufade 0.7s ease-out  alternate;
+ 	opacity: 1;
+}
+.menuhidegallery {
+	display: block;
+	z-index: 499;
+	opacity: 1;
+	background-image: url(../imgs/gallerybgblur.jpg);
+	-webkit-animation: menufadewr 0.5s ease-in forwards;
+ 	-moz-animation: menufademr 0.5s ease-in forwards;
+ 	-o-animation: menufadeor 0.5s ease-in forwards;
+ 	animation: menufader 0.5s ease-in forwards;
+ 	opacity: 0;
+}
+.menubggallery {
+	display: block;
+	z-index: 499;
+	opacity: 0;
+	background-image: url(../imgs/gallerybgblur.jpg);
+	-webkit-animation: menufadew 0.7s ease-out  alternate;
+ 	-moz-animation: menufadem 0.7s ease-out  alternate;
+ 	-o-animation: menufadeo 0.7s ease-out  alternate;
+ 	animation: menufade 0.7s ease-out  alternate;
+ 	opacity: 1;
+}
+
+
 
 #menulist li {
 	padding-bottom: 25px;
@@ -655,6 +706,20 @@ h3 {
 	height: 100%;
 }*/
 
+#gallery {
+	width: 100%;
+	height: 100%;
+	min-height: 700px;
+	position: static;
+	z-index: 0;
+}
+#gallery #bgimg {
+	width: 100%;
+	height: 100%;
+	background-image: url(../imgs/gallerybg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
 /* home */
 
 #page {
@@ -672,6 +737,20 @@ h3 {
 	background-image: url(../imgs/largemntnrnge.jpg);
 	background-size: cover;
 	z-index: -1;
+}
+@keyframes hover {
+	from {bottom: 20px;}
+	to {bottom: 50px;}
+}
+#scrollIco {
+	position: absolute;
+	left: calc(50% - 50px);
+	width: 100px;
+	height: 58px;
+	bottom: 20px;
+	background-image: url(../imgs/scrollico.png);
+	z-index: 100;
+	animation: hover 1s ease-in-out infinite alternate ;
 }
 
 #homebookbg {
@@ -753,7 +832,7 @@ button:hover {
 #container1 {
 	position: absolute;
 	float: left;
-	top: 100%;
+	/*top: 100%;*/
 	/*left: calc(50% - 31.75%);*/
 	width: 62.5%;
 	min-width: 960px;
@@ -778,12 +857,12 @@ button:hover {
 #tours button {
 	float: right;
 	left: 10px;
-  	top: -20px;
+  	top: -15px;
 }
 
 #tours #btntriangle {
 	float: right;
-	top: 30px;
+	top: 35px;
 	left: 150px;
 	transform: rotate(180deg);
 }
@@ -989,18 +1068,323 @@ footer li {
 	background-image: url(../imgs/instahov.png);
 }
 
+/* pop ups */
+
+#pop-up {
+  	position: absolute;
+  	top: calc(55% - 230px);
+  	left: calc(50% - 480px);
+  	width: 62.5%;
+  	min-width: 960px;
+  	max-width: 1200px;
+  	height: 504px;
+  	background-color: #f0eef3;
+  	z-index: 300;
+  	border: 10px solid rgba(0,0,0,0.2);
+  	background-clip: padding-box;
+  	box-sizing: border-box;
+  	border-radius: 10px;
+}
+#scenic {
+	width: 100%;
+	height: 454px;
+}
+#leftimg {
+	width: 50%;
+	height: 454px;
+	background-size: cover;
+}
+#scenic #leftimg {
+	background-image: url(../imgs/tours/flight_1.jpg);
+}
+#mountain #leftimg {
+	background-image: url(../imgs/tours/flight_2.jpg);
+}
+#lake #leftimg {
+	background-image: url(../imgs/tours/flight_3.jpg);
+}
+#stunt #leftimg {
+	background-image: url(../imgs/tours/flight_4.jpg);
+}
+#charter #leftimg {
+	background-image: url(../imgs/tours/flight_5.jpg);
+}
+#tramping #leftimg {
+	background-image: url(../imgs/tours/flight_6.jpg);
+}
+#unique #leftimg {
+	background-image: url(../imgs/tours/flight_7.jpg);
+}
+#questions #leftimg {
+	background-image: url(../imgs/tours/flight_8.jpg);
+}
+#question-form {
+	position: absolute;
+	right: 65px;
+	top: 200px;
+	/*float: right;*/
+	z-index: 310;
+}
+#question-form label {
+	/*float: right;*/
+	width: 75px;
+	min-width: 75px;
+	font-size: 20px;
+	line-height: 35px;
+	font-family: GilroyLight;
+	padding-top: 6px;
+}
+#question-form button {
+	font-size: 16px;
+	height: 25px;
+	clear: both;
+	width: 70px;
+	position: absolute;
+    left: 279px;
+    top: 210px;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+#question-form input, #qinput {
+	float: right;
+	/*height: 25px;*/
+	border: 1px solid rgba(0,0,0,0.2);
+	width: 220px;
+	font-size: 18px;
+	padding: 5px;
+}
+#qinput {
+	height: 100px;
+	resize: none;
+}
+#errortext {
+	position: absolute;
+	top: 212px;
+	left:-55px;
+	width: 330px;
+	text-align: right;
+	color: red;
+	font-family: "Open Sans", serif;
+}
+.form {
+	height: 35px;
+	width: 350px;
+	margin-bottom: 10px;
+}
+.invalid {
+	border: 1px solid red;
+	background-color: rgba(255,200,200,1);
+}
+#text {
+	width: 40%;
+	height: 400px;
+	position: relative;
+	float: right;
+	top: -410px;
+	right: 30px;
+}
+#pop-up h5 {
+	float: left;
+	font-family: GilroyBold;
+	font-size: 36px;
+}
+#pop-up p {
+	font-size: 20px;
+	line-height: 24px;
+	float: right;
+	width: 70%;
+	color: black;
+	text-shadow: none;
+}
+#selector p {
+	line-height: 30px
+}
+#exitbtn {
+	/*width: 30px;
+	height: 30px;*/
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	float: right;
+	color: white;
+	background-color: #e6561f;
+	border: none;
+}
+#exitbtn:hover {
+	color: black;
+	background-color: #f26935;
+}
+#exitbtn {
+	padding: 4px 11px;
+	font-family: 'Open Sans', sans-serif;
+}
+#selector {
+	height: 30px;
+	width: 100%;
+	display: table;
+	position: relative;
+	top: -400px;
+	background-color: #e6561f;
+}
+.section {
+	width: calc(12.5%);
+	float: left;
+	height: 30px;
+	display: inline-block;
+}
+#selector p {
+	position: absolute;
+	clear: both;
+	font-size: 14px;
+	color: white;
+	width: 12.5%;
+	font-family: 'Open Sans', sans-serif;
+	padding: 0;
+	text-align: center;	
+}
+.section:hover {
+	background-color: #f26935;
+}
+#selector p:hover {
+	color: black;
+}
+.seperatorleft {
+	width: 1px;
+	float: left;
+	height: 30px;
+	background-color: rgba(0,0,0,1);
+}
+.seperatorright {
+	width: 1px;
+	float: right;
+	height: 30px;
+	background-color: rgba(0,0,0,1);
+}
+
+/* Gallery */
+
+#galleryCont {
+	position: absolute;
+	top: calc(55% - 235px);
+	max-width: 100%;
+	min-width: 100%;
+}
+#thumbs {
+	width: 100%;
+	box-sizing: border-box;
+	background-color: rgba(0,150,255,0.2);
+	border: 2px solid rgba(0,0,0,0.2);
+	max-height: 54px;
+	overflow: hidden;
+	min-height: 54px;
+}
+#thumbgroup1, #thumbgroup2, #thumbgroup3 {
+	position: absolute;
+	width: calc(100% - 3px);
+}
+#bigimages {
+	box-sizing: border-box;
+	background-color: rgba(0,150,255,0.2);
+	border-left: 2px solid rgba(0,0,0,0.2);
+	border-bottom: 2px solid rgba(0,0,0,0.2);
+	border-right: 2px solid rgba(0,0,0,0.2);
+	height: 500px;
+	max-width: 100%;
+}
+#thumbs img{
+	width: calc(11.11111%);
+	margin-right: 0px;
+	height: 50px;
+}
+.gImage img {
+	margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 498px;
+    max-width: calc(100% - 4px);
+}
+.gImage h6 {
+	position: absolute;
+	bottom: 20px;
+	left: 25px;
+	font-size: 20px;
+	font-family: "Open Sans", sans-serif;
+	color: white;
+	text-shadow: 0px 0px 7px black;
+}
+.gImage {
+	overflow: hidden;
+    max-height: 100%;
+    height: 100%;
+}
+#prev, #next {
+	position: absolute;
+	top: 12px;
+	background-image: url(../imgs/scrollico.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 50px;
+	z-index: 10;
+}
+#prev {
+	left: -8px;
+	transform: rotate(90deg);
+}
+#next {
+	right: -8px;
+	transform: rotate(-90deg);
+}
+
 /****************** OTHER ****************************************************************************************************************************/
 
 #preloadimgs #logohover {
 	background: url(../imgs/logohov.png) no-repeat -9999px -9999px;
 }
-
-
-
-
-
-
-
+#preloadimgs {
+	position: fixed;
+	left: -9999px;
+}
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+}
+/*.hidef {
+	height: 50px;
+	opacity: 1;
+	-webkit-animation: fadeshow 0.5s ease-in-out 0s 1 reverse forwards;
+ 	-moz-animation: fadeshow 0.5s ease-in-out 0s 1 reverse forwards;
+ 	-o-animation: fadeshow 0.5s ease-in-out 0s 1 reverse forwards;
+ 	animation: fadeshow 0.5s ease-in-out 0s 1 reverse forwards;
+	opacity: 0;
+	height: 0px;
+}
+.showf {
+	height: 0px;
+	opacity: 0;
+	-webkit-animation: fadeshow 0.5s ease-in-out 0s 1 normal forwards;
+ 	-moz-animation: fadeshow 0.5s ease-in-out 0s 1 normal forwards;
+ 	-o-animation: fadeshow 0.5s ease-in-out 0s 1 normal forwards;
+ 	animation: fadeshow 0.5s ease-in-out 0s 1 normal forwards;
+	opacity: 1;
+ 	height: 50px;
+}
+@keyframes fadeshow {
+	0% {
+		opacity: 0;
+		height: 0px;
+	}
+	1% {
+		opacity: 0.01;
+		height: 50px;
+	}
+	100% {
+		opacity: 1;
+		height: 50px;
+	}
+}*/
 
 
 

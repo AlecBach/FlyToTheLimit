@@ -28,16 +28,17 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<!--Change browser title.-->
-	<title>Fly to the Limit</title>
+	<title>Fly to the Limit - Tours</title>
 
 	<!--Link style sheets:-->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/tours.css">
+<!-- 	<link rel="stylesheet" type="text/css" href="css/tours.css"> -->
 
 
 </head>
 <body>
+	<div id="pageid">tours</div>
 	<header>
 		<div id="headerwrap">
 			<a href="index.html"><div id="logo"></div></a>
@@ -48,7 +49,7 @@
 	<div id="menuico">
 		<div id="line"></div><div id="line"></div><div id="line"></div>
 	</div>
-	<div id="menucontainer menutours" class="menuhidden"></div>
+	<div id="menucontainer" class="menuhidden"></div>
 	
 	<ul id="menulist" class="menulisthidden">
 		<a href="tours.html"><li>Tours</li></a>
@@ -67,17 +68,6 @@
 		</li></a>
 	</ul>
 
-<!-- 	<section id="page">
-		<div id="bgimg"></div>
-		<div id="container">
-			<div id="homebookbg">
-				<p>Join one of our experienced pilots for a trip that you’ll never forget. Scenic tours, tramping, stunt flights, amphibian planes and more! Endless options to personalise your adventure. </p>
-				<a id="booklink" href="#"><button>Book Now</button></a>
-				<div id="btntriangle"></div>
-			</div>
-		</div>
-	</section> -->
-
 	<section id="tours">
 		<div id="bgimg"></div>
 		<div id="container1">
@@ -85,57 +75,133 @@
 				<h3>Scenic Tours:</h3>
 				<p>Enjoy breath taking views 
 				over Queenstown and Wanaka in one of our fixed wing planes. Choose from 1 hour, to 4 hour flights to fit your schedule perfectly.</p>
-				<a id="booklink" href="#"><button>See More</button></a>
+				<button id="openpopup">See More</button>
 				<div id="btntriangle"></div>
 			</div>
 		</div>
-	</section>
-
-<!-- 	<section id="fleet">
-		<div id="bgimg"></div>
-		<div id="container2">
-			<div id="homebookbg">
-				<h3>Our Fleet:</h3>
-				<p>Our large fleet of safe and versitile planes is great. 4 fixed-wing planes, a glider and a helicopter allow us to cater to your requirements easily.</p>
-				<a id="booklink" href="#"><button>See More</button></a>
-				<div id="btntriangle"></div>
-			</div>
-		</div>
-	</section>
-
-	<section id="contact">
-		<div id="bgimg"></div>
-		<div id="container3">
-			<div id="textwrapper">
-				<p>Get in contact with us now to make sure you can enjoy your flight as soon as possible!</p>
-				<a id="booklink" href="#"><button>See More</button></a>
-				<div id="btntriangle"></div>
-			</div>
-		</div>
-	</section>
-
-	<footer>
-		<div id="container4">
-			
-				<ul>
-					<li>Site Map</li>
-					<li>Booking</li>
-					<li>Contact Us</li>
-					<li>About Us</li>
-				</ul>
-				<div id="social">
-					<ul>
-						<li><a href="https://www.facebook.com/"><div id="fb"></div></a></li>
-						<li><div id="twit"></div></li>
-						<li><div id="insta"></div></li>
-					</ul>
+		<div id="pop-up" class="hide">
+			<div id="scenic" class="show content">
+				<div id="leftimg"></div>
+				<div id="text">
+					<h5>Scenic Tours</h5>
+					<p>The scenic flight takes you over the breath taking views of the mountain ranges of the deep south. Avalible in either 1 or 2 hour flights, this is one flight that will leave you speechless.</p>
 				</div>
-			
+			</div>
+			<div id="mountain" class="hide content">
+				<div id="leftimg"></div>
+				<div id="text">
+					<h5>Mountain Flights</h5>
+					<p>The mountain flight takes you close over the breath taking views of the mountain ranges of the deep south. Avalible in either 1 or 2 hour flights, this is one flight that will leave you speechless.</p>
+				</div>
+			</div>
+			<div id="lake" class="hide content">
+				<div id="leftimg"></div>
+				<div id="text">
+					<h5>Lake Trips</h5>
+					<p>Our amphibian aricraft is one of our most prized planes and caters to those wanting to visit the secluded lakes around the wanaka region. We provide fully catered day trips or just a drop off and pick up - you choose.</p>
+				</div>
+			</div>
+			<div id="stunt" class="hide content">
+				<div id="leftimg"></div>
+				<div id="text">
+					<h5>Stunt Flights</h5>
+					<p>Join one of our experienced pilots for an adrenaline pumping flight in our stunt plane. Filled with various tricks and top speeds near 400km/h. This adventure of aerobatics is sure to be one you’ll never forget.</p>
+				</div>
+			</div>
+			<div id="charter" class="hide content">
+				<div id="leftimg"></div>
+				<div id="text">
+					<h5>Charter Trips</h5>
+					<p>Want to go somewhere? We can take you. Our friendly staff are happy to take you anywhere throughout the southern part of the South Island. There are a lot of hidden beauties out there that become the icing on the cake of your trip.</p>
+				</div>
+			</div>
+			<div id="tramping" class="hide content">
+				<div id="leftimg"></div>
+				<div id="text">
+					<h5>Tramping</h5>
+					<p>Are you a keen tramper who is ready for a new challenge? We can help. We're able to take you to some of the most remote tramps avalible throughout the Wanaka region. A new challenge surrounded by stunning views - what more could you want?</p>
+				</div>
+			</div>
+			<div id="unique" class="hide content">
+				<div id="leftimg"></div>
+				<div id="text">
+					<h5>Choose your own</h5>
+					<p>We want to provide you with the oppourtunity to create your own flight, so we've done just that. You can choose which aricraft you would like to fly in along with when and how many passnegers. The world is your oyster.</p>
+				</div>
+			</div>
+			<div id="questions" class="hide content">
+				<div id="leftimg"></div>
+				<div id="text">
+					<h5>Have any questions?</h5>
+					<p>We would love to hear from you about any of the flights that we offer or could offer in the future!</p>
+				</div>
+				<form id="question-form" method="post">
+					<div class="form">
+						<label>Name: </label>
+						<input type="text" name="name" id="Name" required>
+					</div>
+					<div class="form">
+						<label>Email: </label>
+						<input type="email" name="email" id="Email" required>
+					</div>
+					<div class="form">
+						<label>Question: </label>
+						<textarea type="text" name="question" id="qinput" required minlength="10" rows="4"></textarea>
+					</div>
+					<span id="errortext"></span>
+					<button name="button" id="qstnsubmit" type="submit">Submit</button>
+				</form>
+			</div>
+
+			<div id="exitbtn">X</div>
+			<div id="selector">
+				<div class="section" id="scenicbtn">
+					<div class="seperatorleft"></div><div class="seperatorleft"></div>
+					<p>Scenic Flights</p>
+					<div class="seperatorright"></div>
+				</div><div class="section" id="mountainbtn">
+					<div class="seperatorleft"></div>
+					<p>Mountain Flights</p>
+					<div class="seperatorright"></div>
+				</div><div class="section" id="lakebtn">
+					<div class="seperatorleft"></div>
+					<p>Lake Trips</p>
+					<div class="seperatorright"></div>
+				</div><div class="section" id="stuntbtn">
+					<div class="seperatorleft"></div>
+					<p>Stunt Fights</p>
+					<div class="seperatorright"></div>
+				</div><div class="section" id="charterbtn">
+					<div class="seperatorleft"></div>
+					<p>Charter Trips</p>
+					<div class="seperatorright"></div>
+				</div><div class="section" id="trampingbtn">
+					<div class="seperatorleft"></div>
+					<p>Tramping</p>
+					<div class="seperatorright"></div>
+				</div><div class="section" id="uniquebtn">
+					<div class="seperatorleft"></div>
+					<p>Unique</p>
+					<div class="seperatorright"></div>
+				</div><div class="section" id="questionsbtn">
+					<div class="seperatorleft"></div>
+					<p>Questions?</p>
+					<div class="seperatorright"></div><div class="seperatorright"></div>
+				</div>
+			</div>
 		</div>
-	</footer>
- -->
+	</section>
+
 	<div id="preloadimgs">
 		<div id="logohover"></div>
+		<img src="imgs/tours/flight_1.jpg">
+		<img src="imgs/tours/flight_2.jpg">
+		<img src="imgs/tours/flight_3.jpg">
+		<img src="imgs/tours/flight_4.jpg">
+		<img src="imgs/tours/flight_5.jpg">
+		<img src="imgs/tours/flight_6.jpg">
+		<img src="imgs/tours/flight_7.jpg">
+		<img src="imgs/tours/flight_8.jpg">
 	</div>
 	
 	<script type="text/javascript" src="js/script.js"></script>
