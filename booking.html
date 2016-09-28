@@ -28,7 +28,7 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<!--Change browser title.-->
-	<title>Fly to the Limit</title>
+	<title>Fly to the Limit - Booking</title>
 
 	<!--Link style sheets:-->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -37,7 +37,7 @@
 
 </head>
 <body>
-	<div id="pageid">home</div>
+	<div id="pageid">booking</div>
 	<header>
 		<div id="headerwrap">
 			<a href="index.html"><div id="logo"></div></a>
@@ -69,71 +69,52 @@
 
 	<section id="page">
 		<div id="bgimg"></div>
-		<div id="scrollIco"></div>
-		<div id="container">
-			<div id="homebookbg">
-				<p>Join one of our experienced pilots for a trip that you’ll never forget. Scenic tours, tramping, stunt flights, amphibian planes and more! Endless options to personalise your adventure. </p>
-				<a id="booklink" href="booking.html"><button>Book Now</button></a>
-				<div id="btntriangle"></div>
-			</div>
-		</div>
-	</section>
-
-	<section id="tours">
-		<div id="bgimg"></div>
 		<div id="container1">
-			<div id="textwrapper">
-				<h3>Scenic Tours:</h3>
-				<p>Enjoy breath taking views 
-				over Queenstown and Wanaka in one of our fixed wing planes. Choose from 1 hour, to 4 hour flights to fit your schedule perfectly.</p>
-				<a id="booklink" href="tours.html"><button>See More</button></a>
-				<div id="btntriangle"></div>
-			</div>
-		</div>
-	</section>
-
-	<section id="fleet">
-		<div id="bgimg"></div>
-		<div id="container2">
-			<div id="homebookbg">
-				<h3>Our Fleet:</h3>
-				<p>Our large fleet of safe and versitile planes is great. 4 fixed-wing planes, a glider and a helicopter allow us to cater to your requirements easily.</p>
-				<a id="booklink" href="#"><button>See More</button></a>
-				<div id="btntriangle"></div>
-			</div>
-		</div>
-	</section>
-
-	<section id="contact">
-		<div id="bgimg"></div>
-		<div id="container3">
-			<div id="textwrapper">
-				<p>Get in contact with us now to make sure you can enjoy your flight as soon as possible!</p>
-				<a id="booklink" href="#"><button>See More</button></a>
-				<div id="btntriangle"></div>
-			</div>
-		</div>
-	</section>
-
-	<footer>
-		<div id="container4">
-			
-				<ul>
-					<li>Site Map</li>
-					<li>Booking</li>
-					<li>Contact Us</li>
-					<li>About Us</li>
-				</ul>
-				<div id="social">
-					<ul>
-						<li><a href="https://www.facebook.com/"><div id="fb"></div></a></li>
-						<li><div id="twit"></div></li>
-						<li><div id="insta"></div></li>
-					</ul>
+			<div id="bookingContainer">
+				<div id="bookingHeader">
+					<p>Book your flight:</p>
 				</div>
-			
+				<form id="bookingForm">
+					<div id="contactdetail">
+						<p>Contact Details:</p>
+						<div id="contactleft">
+							<p>Name:</p>
+							<p>Email:</p>
+							<p>Phone number:</p>
+						</div>
+						<div id="contactright">
+							<input type="text" name="Name" required>
+							<input type="email" name="Email" required>
+							<input type="text" name="PhNumber" required>
+						</div>
+					</div>
+					<div id="flightdetail">
+						<p>Flight Details:</p>
+						<div id="flightleft">
+							<p>Package:</p>
+							<p>No. of Passengers:</p>
+							<p>Flight Date:</p>
+						</div>
+						<div id="flightright">
+							<select name="Package" required>
+								<option value="null">Click to Select.</option>
+								<option value="scenic-flight">Scenic Flight</option>
+							  	<option value="mountain-flight">Mountain Flight</option>
+							  	<option value="lake-trip">Lake Trip</option>
+							  	<option value="stunt-flight">Stunt Flight</option>
+							  	<option value="charter-trip">Charter Trip</option>
+							  	<option value="tramping">Tramping</option>
+							  	<option value="unique">Unique</option>
+							</select>
+							<input type="number" value="0" max="10" name="noOfPass" required>
+							<input type="date" name="Date" required>
+						</div>
+					</div>
+					<button type="submit" action="#">Submit</button>
+				</form>
+			</div>
 		</div>
-	</footer>
+	</section>
 
 	<div id="preloadimgs">
 		<div id="logohover"></div>

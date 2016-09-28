@@ -100,9 +100,12 @@ function pageRelatedStyling(){
 		document.querySelector("#textwrapper").style.top = "calc(50% - 135px)";
 		//document.querySelector(".menuhide").style
 	}
-	else if (pageId == "gallery") {
+	else if (pageId == "gallery" || pageId == "booking") {
 		document.querySelector("html").style.height = "100%";
 		setContPos();
+		if (pageId == "booking") {
+			document.querySelector("#page").style.height = "100%";
+		}
 	} 
 
 };
@@ -166,7 +169,8 @@ function setContPos() {
 			var screenWidth = document.getElementById("page").offsetWidth;
 			var containerWidth = document.getElementById("container").offsetWidth;
 			// console.log(screenWidth + " and " + containerWidth);
-			var containerPos = (screenWidth / 2) - (containerWidth / 2) + "px";
+			var containerPos = (screenWidth / 2) - (containerWidth / 2);
+			var containerPos = Math.floor(containerPos) + "px";
 			// console.log(containerPos);
 			document.getElementById("container").style.left = containerPos;
 			document.getElementById("container1").style.left = containerPos;
@@ -180,7 +184,8 @@ function setContPos() {
 			var screenWidth = document.querySelector("body").offsetWidth;
 			var containerWidth = document.getElementById("container1").offsetWidth;
 			// console.log(screenWidth + " and " + containerWidth);
-			var containerPos = (screenWidth / 2) - (containerWidth / 2) + "px";
+			var containerPos = (screenWidth / 2) - (containerWidth / 2);
+			var containerPos = Math.floor(containerPos) + "px";
 			// console.log(containerPos);
 			document.getElementById("container1").style.left = containerPos;
 			document.querySelector("#container1").style.top = "0";
@@ -284,6 +289,18 @@ function changeImage(current) {
 		} else {
 			document.getElementById("n" + i).classList.remove("show");
 			document.getElementById("n" + i).classList.add("hide");
+		}
+	}
+}
+function changeVideo(current) {
+	var videosNumber = 3;
+
+	for (i=1; i<=videosNumber; i++) {
+		if (i == current) {
+			document.getElementById("v" + current).classList.add("show");
+		} else {
+			document.getElementById("v" + i).classList.remove("show");
+			document.getElementById("v" + i).classList.add("hide");
 		}
 	}
 }

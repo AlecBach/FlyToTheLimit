@@ -465,7 +465,7 @@ header {
 	z-index: -100;
 	opacity: 0;
 }
-.menuhidehome {
+.menuhidehome, .menuhidebooking {
 	display: block;
 	z-index: 499;
 	opacity: 1;
@@ -476,7 +476,7 @@ header {
  	animation: menufader 0.5s ease-in forwards;
  	opacity: 0;
 }
-.menubghome {
+.menubghome, .menubgbooking {
 	display: block;
 	z-index: 499;
 	opacity: 0;
@@ -1277,7 +1277,7 @@ footer li {
 	overflow: hidden;
 	min-height: 54px;
 }
-#thumbgroup1, #thumbgroup2, #thumbgroup3 {
+#thumbgroup1, #thumbgroup2, #thumbgroup3, #vidthumbs {
 	position: absolute;
 	width: calc(100% - 3px);
 }
@@ -1334,6 +1334,118 @@ footer li {
 #next {
 	right: -8px;
 	transform: rotate(-90deg);
+}
+
+/* videos */
+
+#vidthumbs img {
+	width: calc(33.33333%);
+	margin-right: 0px;
+	height: 50px;
+}
+#vidthumbs h6 {
+	font-size: 16px;
+	position: absolute;
+	top: 15px;
+	width: 33%;
+	font-family: "Open Sans", sans-serif;
+	color: white;
+	text-align: center;
+	text-shadow: 0px 0px 5px black;
+}
+#vidthumbs #n2 {left: 33.3333%;}
+#vidthumbs #n3 {left: 66.6666%;}
+
+/* booking */
+
+#bookingContainer {
+	width: 100%;
+	height: 500px;
+	background-color: rgba(0,0,0,0.25);
+	position: absolute;
+	top: calc(50% - 170px);
+}
+
+#bookingHeader {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 72px;
+  	background-color: rgba(0,0,0,0.25);
+}
+#bookingHeader p {
+	width: 100%;
+	padding: 16px 0;
+	text-align: center;
+	font-size: 48px;
+  	font-family: "GilroyBold";
+  	color: white;
+  	font-weight: bold;
+  	text-shadow: 0px 2px 4.75px rgba(0, 0, 0, 0.35);
+}
+#bookingForm {
+	height: 424px;
+	width: 100%;
+	position: absolute;
+	top: 72px;
+}
+#contactdetail, #flightdetail {
+	height: calc(50% - 25px);
+	width: 100%;
+	text-align: center;
+}
+#contactdetail p, #flightdetail p {
+	padding: 5px 0;
+	font-family: "OpenSans", sans-serif;
+	font-weight: 500;
+	text-shadow: 0 0 5px rgba(0,0,0,0.7);
+}
+#contactleft, #flightleft, #contactright, #flightright {
+	width: calc(50% - 5px);
+	height: calc(50% - 75px);
+	/*background-color: rgba(255,255,0,0.2);*/
+	position: absolute;
+}
+#contactleft, #flightleft {
+	left: 0;
+}
+#contactleft p, #flightleft p {
+	/*font-size: 40px;*/
+	line-height: 46px;
+	padding: 0;
+	text-align: right;
+}
+#contactright, #flightright {
+	right: 0;
+}
+#contactright input, #flightright input {
+	height: 36px;
+	width: 60%;
+	float: left;
+	margin: 4px 0;
+	padding: 0 5px;
+	font-size: 25px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.7);
+	border: 1px solid rgba(0,0,0,0.3);
+}
+#bookingForm button {
+	margin: 0 calc(50% - 70px);
+	margin-top: 2px;
+	margin-bottom: 4px;
+	height: 45px;
+	position: static;
+}
+#flightright select {
+	height: 38px;
+	float: left;
+	margin: 4px 0;
+	width: calc(60% + 12px);
+	padding: 0 5px;
+	font-size: 25px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.7);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 0;
+	-webkit-appearance: none;
 }
 
 /****************** OTHER ****************************************************************************************************************************/
