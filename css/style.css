@@ -531,6 +531,28 @@ header {
  	animation: menufade 0.7s ease-out  alternate;
  	opacity: 1;
 }
+.menuhideabout {
+	display: block;
+	z-index: 499;
+	opacity: 1;
+	background-image: url(../imgs/cessnablur.jpg);
+	-webkit-animation: menufadewr 0.5s ease-in forwards;
+ 	-moz-animation: menufademr 0.5s ease-in forwards;
+ 	-o-animation: menufadeor 0.5s ease-in forwards;
+ 	animation: menufader 0.5s ease-in forwards;
+ 	opacity: 0;
+}
+.menubgabout {
+	display: block;
+	z-index: 499;
+	opacity: 0;
+	background-image: url(../imgs/cessnablur.jpg);
+	-webkit-animation: menufadew 0.7s ease-out  alternate;
+ 	-moz-animation: menufadem 0.7s ease-out  alternate;
+ 	-o-animation: menufadeo 0.7s ease-out  alternate;
+ 	animation: menufade 0.7s ease-out  alternate;
+ 	opacity: 1;
+}
 
 
 
@@ -1070,7 +1092,7 @@ footer li {
 
 /* pop ups */
 
-#pop-up {
+#pop-up, #fleetpop-up, #staffpop-up {
   	position: absolute;
   	top: calc(55% - 230px);
   	left: calc(50% - 480px);
@@ -1163,7 +1185,7 @@ footer li {
 	width: 330px;
 	text-align: right;
 	color: red;
-	font-family: "Open Sans", serif;
+	font-family: "Open Sans", sans-serif;
 }
 .form {
 	height: 35px;
@@ -1182,12 +1204,12 @@ footer li {
 	top: -410px;
 	right: 30px;
 }
-#pop-up h5 {
+#pop-up h5, #fleetpop-up h5, #staffpop-up h5 {
 	float: left;
 	font-family: GilroyBold;
 	font-size: 36px;
 }
-#pop-up p {
+#pop-up p, #fleetpop-up p, #staffpop-up p {
 	font-size: 20px;
 	line-height: 24px;
 	float: right;
@@ -1198,7 +1220,7 @@ footer li {
 #selector p {
 	line-height: 30px
 }
-#exitbtn {
+#exitbtn, #exitbtn2 {
 	/*width: 30px;
 	height: 30px;*/
 	position: absolute;
@@ -1209,11 +1231,11 @@ footer li {
 	background-color: #e6561f;
 	border: none;
 }
-#exitbtn:hover {
+#exitbtn:hover, #exitbtn2:hover {
 	color: black;
 	background-color: #f26935;
 }
-#exitbtn {
+#exitbtn, #exitbtn2 {
 	padding: 4px 11px;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -1272,7 +1294,7 @@ footer li {
 	width: 100%;
 	box-sizing: border-box;
 	background-color: rgba(0,150,255,0.2);
-	border: 2px solid rgba(0,0,0,0.2);
+	border: 2px solid rgba(0,0,0,0.5);
 	max-height: 54px;
 	overflow: hidden;
 	min-height: 54px;
@@ -1425,6 +1447,7 @@ footer li {
 	margin: 4px 0;
 	padding: 0 5px;
 	font-size: 25px;
+	font-family: "OpenSans", sans-serif;
 	box-shadow: 0 0 5px rgba(0,0,0,0.7);
 	border: 1px solid rgba(0,0,0,0.3);
 }
@@ -1447,6 +1470,209 @@ footer li {
 	border-radius: 0;
 	-webkit-appearance: none;
 }
+#bookingForm #errortext {
+	position: absolute;
+	bottom: 9px;
+	text-align: left;
+	top: auto;
+	width: auto;
+	left: calc(50% + 85px);
+	padding: 5px 10px;
+	background-color: white;
+}
+
+/* about */
+
+
+
+#fleetDesc, #fleetHeader {
+	background-color: rgba(0,0,0,0.4);
+}
+
+#fleetDesc {
+	width: calc(50% - 10px);
+	height: 200px;
+}
+
+#fleetDesc p {
+	text-align: left;
+	font-size: 20px;
+	line-height: 26px;
+	font-weight: bolder;
+	padding: 15px 25px;
+}
+#fleetDesc button {
+	width: 120px;
+	height: 40px;
+	left: auto;
+	position: absolute;
+	right: 50%;
+	top: 145px;
+}
+#fleetDesc #btntriangle {
+	position: absolute;
+	left: auto;
+	right: 50%;
+	transform: rotate(180deg);
+	top: 175px;
+}
+
+#fleetDesc h3 {
+	text-align: left;
+	padding: 10px 25px;
+}
+
+#staffpop-up .section, #staffpop-up .section p {
+	width: 16.666666666%;
+}
+
+#staffDesc, #staffHeader {
+	background-color: rgba(0,0,0,0.4);
+}
+
+#staffDesc {
+	width: calc(50% - 10px);
+	position: absolute;
+	right: 0%;
+	top: 0%;
+	height: 200px;
+}
+
+#staffDesc p {
+	text-align: left;
+	font-size: 20px;
+	line-height: 26px;
+	font-weight: bolder;
+	padding: 15px 25px;
+}
+#staffDesc button {
+	width: 120px;
+	height: 40px;
+	left: auto;
+	position: absolute;
+	right: -10px;
+	top: 145px;
+}
+#staffDesc #btntriangle {
+	position: absolute;
+	left: auto;
+	right: -10px;
+	transform: rotate(180deg);
+	top: 175px;
+}
+
+#staffDesc h3 {
+	text-align: left;
+	padding: 10px 25px;
+}
+
+#mapHeader, #contactHeader {
+	width: 100%;
+	/*position: absolute;*/
+	left: 0%;
+	top: 220px;
+	/*height: 330px;*/
+	background-color: rgba(0,0,0,0.5);
+}
+#mapHeader h3, #contactHeader h3 {
+	text-align: left;
+	padding: 10px 25px;
+}
+#mapCont, #contactForm {
+	width: calc(50% - 10px);
+	position: absolute;
+	left: 0%;
+	top: 220px;
+	height: 330px;
+	background-color: rgba(0,0,0,0.4);
+}
+#contactHeader, #contactForm {
+	left: auto;
+	right: 0%;
+}
+#map {
+	padding: 5px 25px;
+}
+#contact-form {
+	padding: 10px 25px;
+	color: white;
+	font-size: 28px;
+	line-height: 38px;
+	font-family: "OpenSans", sans-serif;
+	text-shadow: 0 0 5px rgba(0,0,0,0.7);
+}
+#contact-form input, #contact-form textarea {
+ 	width: calc(100% - 185px);
+ 	position: absolute;
+ 	right: 25px;
+ 	height: 28px;
+ 	font-size: 22px;
+ 	box-shadow: 0 0 5px rgba(0,0,0,0.7);
+	border: 1px solid rgba(0,0,0,0.3);
+ 	padding: 2px 3px;
+}
+#contact-form #n1 {
+	top: 72px;
+}
+#contact-form #n2 {
+	top: 110px;
+}
+#contact-form #n3 {
+	top: 148px;
+	height: 110px;
+	resize: none;
+}
+
+#contact-form button {
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	left:auto;
+	right: -10px;
+	top: 276px;
+}
+#contact-form #btntriangle {
+	position: absolute;
+	left:auto;
+	right: -10px;
+	top: 306px;
+	transform: rotate(180deg);
+}
+
+#contact-form #errortext {
+	top: 277px;
+	left: 40px;
+	padding: 0px 6px;
+	background-color: white;
+	text-shadow: none;
+	font-size: 16px;
+}
+
+/* fleet pop-up */
+#fleetpop-up .section, #fleetpop-up .section p {
+	width: 16.666666666%;
+}
+#fleetpop-up .content p, #staffpop-up .content p {
+	text-align: left;
+}
+#amphibian #leftimg { background-image: url(../imgs/fleet/plane_1.jpg); }
+#glider #leftimg { background-image: url(../imgs/fleet/plane_2.jpg); }
+#stuntp #leftimg { background-image: url(../imgs/fleet/plane_3.jpg); }
+#skyhawk #leftimg { background-image: url(../imgs/fleet/plane_4.jpg); }
+#scenicp #leftimg { background-image: url(../imgs/fleet/plane_5.jpg); }
+#heli #leftimg { background-image: url(../imgs/fleet/plane_6.jpg); }
+
+/* staff pop-up*/
+
+#staffpop-up .section, #staffpop-up .section p {
+	width: 20%;
+}
+#olga #leftimg { background-image: url(../imgs/staff/about_1.jpg); }
+#finn #leftimg { background-image: url(../imgs/staff/about_2.jpg); }
+#wendy #leftimg { background-image: url(../imgs/staff/about_3.jpg); }
+#john #leftimg { background-image: url(../imgs/staff/about_4.jpg); }
+#hans #leftimg { background-image: url(../imgs/staff/about_5.jpg); }
+
 
 /****************** OTHER ****************************************************************************************************************************/
 
@@ -1462,6 +1688,12 @@ footer li {
 }
 .show {
 	display: block;
+}
+.hideo {
+	opacity: 0;
+}
+.showo {
+	opacity: 1;
 }
 /*.hidef {
 	height: 50px;

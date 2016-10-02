@@ -100,11 +100,15 @@ function pageRelatedStyling(){
 		document.querySelector("#textwrapper").style.top = "calc(50% - 135px)";
 		//document.querySelector(".menuhide").style
 	}
-	else if (pageId == "gallery" || pageId == "booking") {
+	else if (pageId == "gallery" || pageId == "booking" || pageId == "about") {
 		document.querySelector("html").style.height = "100%";
 		setContPos();
 		if (pageId == "booking") {
 			document.querySelector("#page").style.height = "100%";
+		}
+		if (pageId == "about") {
+			document.querySelector("#fleet").style.height = "100%";
+			document.querySelector("#fleetDesc").style.top = "calc(50% - 140px)";
 		}
 	} 
 
@@ -128,6 +132,83 @@ function popUpPages() {
 			else if (popUp.getAttribute("class") == "show") {
 				popUp.classList.remove('show');
 				popUp.classList.add('hide');
+			}
+
+		}
+
+		//Using the selector to change between content
+		var selectorNodes = document.getElementsByClassName("section");
+		var contentNodes = document.getElementsByClassName("content");
+		 
+		var selectPage = function() {
+			var selection = this.getAttribute("id");
+			selection = selection.replace ("btn", "");
+
+			var	showThis = document.getElementById(selection); 
+
+			for(var i = 0; i < contentNodes.length; i++){
+				if (contentNodes[i].classList.contains("show")) {
+					contentNodes[i].classList.remove('show');
+					contentNodes[i].classList.add('hide');
+				}
+			}
+
+			if (showThis.classList.contains("hide")) {
+				showThis.classList.remove('hide');
+				showThis.classList.add('show');	
+			}
+
+
+		};
+
+		for (var i = 0; i < selectorNodes.length; i++) {
+			selectorNodes[i].addEventListener('click', selectPage, false);
+		}
+	}
+	if (pageId == "about") {
+		//ext listener and function for opening a pop up screen
+		var fleetPopUpBtn = document.querySelector("#fleetopenpopup");
+		var fleetPopUp = document.querySelector("#fleetpop-up");
+		var defaultCont = document.querySelector("#container1");
+		var	exitBtn = document.querySelector("#exitbtn");
+
+		fleetPopUpBtn.addEventListener("click", fleetPopUpFctn, false);
+		exitBtn.addEventListener("click", fleetPopUpFctn, false);
+
+		function fleetPopUpFctn() {
+			if (fleetPopUp.getAttribute("class") == "hide") {
+				fleetPopUp.classList.remove('hide');
+				fleetPopUp.classList.add('show');
+				defaultCont.classList.remove('showo');
+				defaultCont.classList.add('hideo');
+			}
+			else if (fleetPopUp.getAttribute("class") == "show") {
+				fleetPopUp.classList.remove('show');
+				fleetPopUp.classList.add('hide');
+				defaultCont.classList.remove('hideo');
+				defaultCont.classList.add('showo');
+			}
+
+		}
+		////////
+		var staffPopUpBtn = document.querySelector("#staffopenpopup");
+		var staffPopUp = document.querySelector("#staffpop-up");
+		var	exitBtn2 = document.querySelector("#exitbtn2");
+
+		staffPopUpBtn.addEventListener("click", staffPopUpFctn, false);
+		exitBtn2.addEventListener("click", staffPopUpFctn, false);
+		function staffPopUpFctn() {
+			if (staffPopUp.getAttribute("class") == "hide") {
+				staffPopUp.classList.remove('hide');
+				staffPopUp.classList.add('show');
+				defaultCont.classList.remove('showo');
+				defaultCont.classList.add('hideo');
+			}
+			else if (staffPopUp.getAttribute("class") == "show") {
+				staffPopUp.classList.remove('show');
+				staffPopUp.classList.add('hide');
+				defaultCont.classList.remove('hideo');
+				defaultCont.classList.add('showo');
 			}
 
 		}
@@ -192,7 +273,13 @@ function setContPos() {
 			if (pageId == "tours") {
 				document.getElementById("pop-up").style.left = containerPos;
 			}
-			
+			if (pageId == "about") {
+				document.getElementById("fleetpop-up").style.left = containerPos;
+				document.getElementById("staffpop-up").style.left = containerPos;
+				document.querySelector("#container1").style.height = "550px";
+				document.querySelector("#container1").style.minHeight = "550px";
+				document.querySelector("#container1").style.top = "calc(50% - 200px)";
+			}
 		}, 30);
 	}
 }
@@ -202,84 +289,147 @@ var errorMessage = "";
 var errorText = document.querySelector("#errortext");
 if (pageId == "tours"){
 	// if (document.querySelector("#questions").classList.contains("show")) {
-		console.log("yp)");
-		var form = document.querySelector("#question-form");
-		form.noValidate = true;
-		console.log(form);
-		form.addEventListener('submit', function(evt){
-			var isError = false;
-			var formElements = this.elements;
-			for (var i = 0; i < formElements.length; i++) {
-				var field = formElements[i];
-				if ( ! isFieldValid(field)) {
-					isError = true;
-				}
+	var form = document.querySelector("#question-form");
+	form.noValidate = true;
+	form.addEventListener('submit', function(evt){
+		var isError = false;
+		var formElements = this.elements;
+		for (var i = 0; i < formElements.length; i++) {
+			var field = formElements[i];
+			if ( ! isFieldValid(field)) {
+				isError = true;
 			}
-			if(isError){
-				evt.preventDefault();
+		}
+		if(isError){
+			evt.preventDefault();
+		}
+	});
+}
+if(pageId == "booking") {
+	var form = document.querySelector("#bookingForm");
+	form.noValidate = true;
+	form.addEventListener('submit', function(evt){
+		var isError = false;
+		var formElements = document.querySelectorAll("#input");
+		for (var i = 0; i < formElements.length; i++) {
+			var field = formElements[i];
+			if ( ! isFieldValid(field)) {
+				isError = true;
 			}
-		});
-	// }
-	function isFieldValid(field){
-
-		if(! needsToBeValidated(field)){
-			return true;
 		}
-		field.classList.remove('invalid');
-	
-		if(field.id.length === 0 || field.name.length === 0){
-			errorText.innerHTML = "error: Field should have ID and Name attributes.";
-			field.classList.add('invalid');
-			return false;
+		if(isError){
+			evt.preventDefault();
 		}
-		if(field.required && field.value.trim() === ""){		
-			errorText.innerHTML = "Please fill all fields.";
-			field.classList.add('invalid');
-			return false;		
+	});
+}
+if(pageId == "about") {
+	var form = document.querySelector("#contact-form");
+	form.noValidate = true;
+	form.addEventListener('submit', function(evt){
+		var isError = false;
+		var formElements = document.querySelectorAll(".input");
+		console.log(formElements);
+		for (var i = 0; i < formElements.length; i++) {
+			var field = formElements[i];
+			if ( ! isFieldValid(field)) {
+				isError = true;
+			}
 		}
-		if(field.minLength > 0 && field.value.length < field.minLength){
-			errorText.innerHTML = "The question must be at least " + field.minLength + " characters.";
-			field.classList.add('invalid');
-			return false;
+		if(isError){
+			evt.preventDefault();
 		}
-
-		if(field.type === "email" && ! isEmail(field.value.toLowerCase())){			
-			errorText.innerHTML = "Provide a proper email.";
-			field.classList.add('invalid');
-			return false;
-		}
-
-
-		
-		if(errorMessage !== ""){
-			// generate error field
-			field.classList.add('invalid');
-
-			// display error message in form
-			errorText.innerHTML = errorMessage;
-			// var errorSpan = document.querySelector("#"+ field.id +"-error");
-			// errorSpan.innerHTML = errorMessage;
-			// errorSpan.classList.add('warning');
-
-			return false;
-		}
-	return true;
-	}
-	function needsToBeValidated(field){
-		if(field.id === "qstnsubmit"){
-			return false;
-		} else {
-			return true;
-			
-		}
-	}
-	function isEmail(input){
-		console.log(input);
-		console.log(input.match(/^([a-z0-9_.\-+]+)@([\da-z.\-]+).([a-z\.]{2,})$/));
-		return input.match(/^([a-z0-9_.\-+]+)@([\da-z.\-]+)\.([a-z\.]{2,})$/);
-	}
+	});
 }
 	
+function isFieldValid(field){
+
+	if(! needsToBeValidated(field)){
+		return true;
+	}
+	console.log(field.type);
+	console.log(field.value)
+	field.classList.remove('invalid');
+	function invalid() {
+		field.classList.add('invalid');
+		errorText.classList.add('show');
+		errorText.classList.remove('hide');
+	}
+
+	if(field.id.length === 0 || field.name.length === 0){
+		errorText.innerHTML = "error: Field should have ID and Name attributes.";
+		invalid();
+		return false;
+	}
+	if(field.required && field.value.trim() === ""){		
+		errorText.innerHTML = "Please fill all fields.";
+		invalid();
+		return false;		
+	}
+	if(field.minLength > 0 && field.value.length < field.minLength){
+		if (pageId == "about") {
+			errorText.innerHTML = "The message must be at least " + field.minLength + " characters.";
+		}
+		else {
+			errorText.innerHTML = "The question must be at least " + field.minLength + " characters.";
+		}
+		invalid();
+		return false;
+	}
+
+	if(field.type === "email" && ! isEmail(field.value.toLowerCase())){			
+		errorText.innerHTML = "Please provide a proper email.";
+		invalid();
+		return false;
+	}
+	
+	if(field.name === "PhNumber" && ! isPhone(field.value)){
+		errorText.innerHTML = "Please provide a proper Phone number.";
+		invalid();
+		return false;
+	}
+	if(field.type === "select-one" && field.value === "null") {
+		errorText.innerHTML = "Please select a flight package.";
+		invalid();
+		return false;
+	}
+	if(field.type === "number" && field.value === "0") {
+		errorText.innerHTML = "Please enter the number of passengers.";
+		invalid();
+		return false;
+	}
+
+	
+	if(errorMessage !== ""){
+		// generate error field
+		invalid();
+
+		// display error message in form
+		errorText.innerHTML = errorMessage;
+		// var errorSpan = document.querySelector("#"+ field.id +"-error");
+		// errorSpan.innerHTML = errorMessage;
+		// errorSpan.classList.add('warning');
+
+		return false;
+	}
+return true;
+}
+function needsToBeValidated(field){
+	if(field.id === "qstnsubmit"){
+		return false;
+	} else {
+		return true;
+		
+	}
+}
+function isEmail(input){
+	//console.log(input);
+	//console.log(input.match(/^([a-z0-9_.\-+]+)@([\da-z.\-]+).([a-z\.]{2,})$/));
+	return input.match(/^([a-z0-9_.\-+]+)@([\da-z.\-]+)\.([a-z\.]{2,})$/);
+}
+function isPhone(input){
+	return input.match(/^[0-9.\-()]{8,15}$/);
+}
+
 function changeImage(current) {
 	var imagesNumber = 27;
 
